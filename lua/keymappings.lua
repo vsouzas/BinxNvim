@@ -15,6 +15,9 @@ vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', {noremap 
 vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
 
+-- Bujo
+vim.api.nvim_set_keymap('n', '<Leader>t', ':Todo<CR>', {noremap = true, silent = true})
+
 -- Better window movement
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})

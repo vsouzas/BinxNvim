@@ -43,5 +43,6 @@ local paq = require("paq-nvim").paq
 
         -- General
         paq "folke/which-key.nvim"
+        paq "vuciv/vim-bujo"
         paq "windwp/nvim-autopairs"
         paq "terrortylor/nvim-comment"
