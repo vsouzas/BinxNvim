@@ -33,14 +33,13 @@ local paq = require("paq-nvim").paq
         paq "kyazdani42/nvim-tree.lua"
 
         -- Colorscheme
-        paq "Shadorain/shadotheme"
+        paq "sainnhe/gruvbox-material"
 
         -- Icons
         paq "kyazdani42/nvim-web-devicons"
 
-        -- Status Line and Bufferline
+        -- Bufferline
         paq "romgrk/barbar.nvim"
-        paq "hoob3rt/lualine.nvim"
 
         -- General
         paq "folke/which-key.nvim"
