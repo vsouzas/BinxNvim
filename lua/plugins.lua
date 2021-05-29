@@ -41,6 +41,9 @@ local paq = require("paq-nvim").paq
         -- Bufferline
         paq "romgrk/barbar.nvim"
 
+        -- Discord Presence
+        paq "andweeb/presence.nvim"
+
         -- General
         paq "vuciv/vim-bujo"
         paq "windwp/nvim-autopairs"
