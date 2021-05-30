@@ -23,6 +23,9 @@ local paq = require("paq-nvim").paq
         paq "hrsh7th/vim-vsnip"
         paq "rafamadriz/friendly-snippets"
 
+        -- Org Mode
+        paq "vhyrro/neorg"
+
         -- Telescope
         paq "nvim-lua/popup.nvim"
         paq "nvim-lua/plenary.nvim"
@@ -45,6 +48,5 @@ local paq = require("paq-nvim").paq
         paq "andweeb/presence.nvim"
 
         -- General
-        paq "vuciv/vim-bujo"
         paq "windwp/nvim-autopairs"
         paq "terrortylor/nvim-comment"

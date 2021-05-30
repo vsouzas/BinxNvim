@@ -7,7 +7,7 @@ require('colorscheme')
 require('barbar')
 require('nvim-telescope')
 require('nvim-presence')
-require('nvim-bujo')
+require('nvim-neorg')
 require('autopairs')
 require('comment')
 
