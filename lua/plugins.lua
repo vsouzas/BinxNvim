@@ -1,52 +1,74 @@
-local fn = vim.fn
 local execute = vim.api.nvim_command
+local fn = vim.fn
 
-local install_path = fn.stdpath("data") .. "/site/pack/paqs/start/paq-nvim"
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  execute("!git clone https://github.com/savq/paq-nvim " .. install_path)
-  execute "packadd paq-nvim"
+    execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+    execute "packadd packer.nvim"
 end
 
-local paq = require("paq-nvim").paq
-        -- Paq can manage itself as an optional plugin
-        paq "savq/paq-nvim"
+--- Check if a file or directory exists in this path
+local function require_plugin(plugin)
+    local plugin_prefix = fn.stdpath("data") .. "/site/pack/packer/opt/"
 
-        -- LSP
-        paq "neovim/nvim-lspconfig"
-        paq "glepnir/lspsaga.nvim"
-        paq "kabouzeid/nvim-lspinstall"
-        paq "onsails/lspkind-nvim"
+    local plugin_path = plugin_prefix .. plugin .. "/"
+    --  print('test '..plugin_path)
+    local ok, err, code = os.rename(plugin_path, plugin_path)
+    if not ok then
+        if code == 13 then
+            -- Permission denied, but it exists
+            return true
+        end
+    end
+    --  print(ok, err, code)
+    if ok then vim.cmd("packadd " .. plugin) end
+    return ok, err, code
+end
 
-        -- Autocomplete
-        paq "hrsh7th/nvim-compe"
-        paq "hrsh7th/vim-vsnip"
-        paq "rafamadriz/friendly-snippets"
+vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
-        -- Org Mode
-        paq "vhyrro/neorg"
+return require("packer").startup(function(use)
+    -- Packer can manage itself as an optional plugin
+    use "wbthomason/packer.nvim"
 
-        -- Telescope
-        paq "nvim-lua/popup.nvim"
-        paq "nvim-lua/plenary.nvim"
-        paq "nvim-telescope/telescope.nvim"
-        paq "nvim-telescope/telescope-fzy-native.nvim"
+    -- LSP
+    use "neovim/nvim-lspconfig"
+    use "glepnir/lspsaga.nvim"
+    use "kabouzeid/nvim-lspinstall"
+    use "onsails/lspkind-nvim"
 
-        -- Explorer
-        paq "kyazdani42/nvim-tree.lua"
+    -- Autocomplete
+    use "hrsh7th/nvim-compe"
+    use "hrsh7th/vim-vsnip"
+    use "rafamadriz/friendly-snippets"
 
-        -- Colorscheme
-        paq "sainnhe/gruvbox-material"
+    -- Org Mode
+    use "vhyrro/neorg"
 
-        -- Icons
-        paq "kyazdani42/nvim-web-devicons"
+    -- Telescope
+    use "nvim-lua/popup.nvim"
+    use "nvim-lua/plenary.nvim"
+    use "nvim-telescope/telescope.nvim"
+    use "nvim-telescope/telescope-fzy-native.nvim"
 
-        -- Bufferline
-        paq "romgrk/barbar.nvim"
+    -- Explorer
+    use "kyazdani42/nvim-tree.lua"
 
-        -- Discord Presence
-        paq "andweeb/presence.nvim"
+    -- Colorscheme
+    use "sainnhe/gruvbox-material"
 
-        -- General
-        paq "windwp/nvim-autopairs"
-        paq "terrortylor/nvim-comment"
+    -- Icons
+    use "kyazdani42/nvim-web-devicons"
+
+    -- Bufferline
+    use "romgrk/barbar.nvim"
+
+    -- Discord Presence
+    use "andweeb/presence.nvim"
+
+    -- General
+    use "windwp/nvim-autopairs"
+    use "terrortylor/nvim-comment"
+
+end)
