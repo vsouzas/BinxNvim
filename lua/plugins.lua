@@ -64,9 +64,6 @@ return require("packer").startup(function(use)
     -- Bufferline
     use "romgrk/barbar.nvim"
 
-    -- Discord Presence
-    use "andweeb/presence.nvim"
-
     -- General
     use "windwp/nvim-autopairs"
     use "terrortylor/nvim-comment"

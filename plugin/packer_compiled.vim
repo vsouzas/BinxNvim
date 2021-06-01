@@ -135,10 +135,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\indra\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\popup.nvim"
   },
-  ["presence.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\indra\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\presence.nvim"
-  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "C:\\Users\\indra\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-fzy-native.nvim"
