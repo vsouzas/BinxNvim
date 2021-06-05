@@ -5,4 +5,22 @@ Hello welcome to my simple and non-bloat neovim config, please rememeber that I 
   <img src="/BinxNvim.png" height="480" />
 </p>
 
+## Install
+
+1. Clone repository
+
+### Linux/Mac
+```bash
+git clone https://github.com/Binx-Codes/BinxNvim.git ~/.config/nvim
+```
+
+### Windows
+```bash
+git clone https://github.com/Binx-Codes/BinxNvim.git ~/AppData/Local/nvim
+```
+
+2. Get started using Neovim
+
+After cloning the config run `nvim` and then `:PackerInstall`
+
 Enjoy!!

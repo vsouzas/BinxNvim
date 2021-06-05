@@ -9,6 +9,4 @@ require('nvim-telescope')
 require('nvim-neorg')
 require('autopairs')
 require('comment')
-
--- LSP
 require('lsp')
